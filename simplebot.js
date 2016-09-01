@@ -16,9 +16,9 @@ var bot = new TelegramBot(token, botOptions);
  
 bot.getMe().then(function(me)
 {
-    console.log('Hello! My name is %s!', me.first_name);
-    console.log('My id is %s.', me.id);
-    console.log('And my username is @%s.', me.username);
+    console.log('Bot name is %s!', me.first_name);
+    console.log('Bot id is %s.', me.id);
+    console.log('Bot username is @%s.', me.username);
 });
  
 bot.on('text', function(msg)
@@ -28,8 +28,8 @@ bot.on('text', function(msg)
     var messageDate = msg.date;
     var messageUsr = msg.from.username;
  
-    if (messageText === '/say') {
-        sendMessageByBot(messageChatId, 'Hello World!');
+    if (messageText === '/hi') {
+        sendMessageByBot(messageChatId, 'Hi, ' + messageUsr  + '!\nI\'m simple bot');
     }
  
     console.log(msg);
@@ -37,5 +37,5 @@ bot.on('text', function(msg)
  
 function sendMessageByBot(aChatId, aMessage)
 {
-    bot.sendMessage(aChatId, aMessage, { caption: 'I\'m a cute bot!' });
+    bot.sendMessage(aChatId, aMessage, { caption: 'Sorry, i\'m bot' });
 }
