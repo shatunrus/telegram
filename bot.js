@@ -18,15 +18,16 @@ bot.on('text', function(msg)
     var messageText = msg.text;
     var messageDate = msg.date;
     var messageUsr = msg.from.username;
-    var patt1 = /rpd...{1,3}-[1-9][0-9]{0,3}/g;
+    var patt1 = /rpd...{1,5}-[1-9][0-9]{0,3}/g;
     var buharray = [ 'Меня только снаружи спиртом протирать можно, я же все-таки робот. А вот вам, господа, изнутри освежиться надо. Тем более ',
                      'От работы дохнут кони, давайте лучше забухаем? Тем более ',
-                     'С детства мечтал писать стихи как Есенин, но пока получается только так же бухать. Бухните классически, тем более '];
+                     'С детства мечтал писать стихи как Есенин, но пока получается только так же бухать. Забухни классически, тем более '];
     var sorryarr = [ 'Прости, я просто набор ноликов и единичек',
-                     'Извини, я пока еще не очень умный робот',
-                     'Хватит разговарить с компьютером. Тем более я еще не могу осмысленно отвечать'];
+                     'Извини, я пока еще не очень умный бот',
+                     'Хватит разговарить с компьютером. Тем более, что я еще не умею осмысленно отвечать'];
     var randbuh = buharray[Math.floor(Math.random() * buharray.length)];
     var sorry = sorryarr[Math.floor(Math.random() * sorryarr.length)];
+    
     if (messageText === '/dima') {
         sendMessageByBot('-130011298', 'Дима, БЛЯДЬ!!!');
     }
@@ -43,7 +44,14 @@ bot.on('text', function(msg)
          if (messageText.match(patt1)) { 
     	    sendMessageByBot(messageChatId, 'https://jira.osmp.ru/browse' + messageText.toUpperCase());
          } else {
-	    sendMessageByBot(messageChatId, 'No Matching String or incorrect request');
+	    sendMessageByBot(messageChatId, 'Какую-то хуйню вы пишете, а не номер тикета, сами его и ищите');
+         }
+    }
+    if (messageText.indexOf('/fuck@') >= 0) {
+         if (messageText.indexOf(messageUsr) >=0) { 
+    	    sendMessageByBot(messageChatId, messageUsr + ', БЛЯДЬ!!!');
+         } else {
+	    sendMessageByBot(messageChatId, 'А так хотелось кого-то послать');
          }
     }
     if (messageText.indexOf('@RapidaCron_bot') >= 0) {
