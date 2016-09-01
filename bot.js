@@ -55,8 +55,8 @@ bot.on('text', function(msg)
     }
     if (messageText.indexOf('/fuck@') >= 0) {   // Нашли, что сообщение начинается с "послать"
         for (var i=0; usrarray.length; i++) {   // Помчали перебором по массиву с никами и именами
-        if (messageText.indexOf(usrarray[i,0]) >=0 {    // Если ник повстречался в тексте сообщения
-            sendMessageByBot(messageChatId, usrarray[i,0] + ', БЛЯДЬ!!!');  //Посылаем человека по имени
+        if (messageText.indexOf(usrarray[i] [0]) >=0 ) {    // Если ник повстречался в тексте сообщения
+            sendMessageByBot(messageChatId, usrarray[i] [1] + ', БЛЯДЬ!!!');  //Посылаем человека по имени
         }
          }
     }
